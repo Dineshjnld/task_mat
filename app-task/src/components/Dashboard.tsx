@@ -100,6 +100,10 @@ const Dashboard: React.FC = () => {
         alert('Failed to delete interview. Please try again later.');
       }
     };
+    const handleSignOut = () => {
+      localStorage.removeItem('token');
+      nav('/');
+    };
   
     return (
       <div className="bg-gray-900 text-white p-8 min-h-screen">
@@ -110,6 +114,12 @@ const Dashboard: React.FC = () => {
             onClick={handleAddNewInterview}
           >
             Add New
+            </button>
+            <button
+              className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              onClick={handleSignOut}
+            >
+              Sign Out
           </button>
         </div>
   
@@ -224,27 +234,3 @@ const Dashboard: React.FC = () => {
   };
   
   export default Dashboard;
-  
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

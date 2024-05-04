@@ -1,4 +1,3 @@
-// SignUpForm.tsx
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -17,9 +16,10 @@ const SignUpForm: React.FC = () => {
     try {
       const response = await axios.post('http://localhost:5000/api/signup', formData);
       console.log(response.data);
-      alert('Successfully signed up'); // Handle success response
+      alert('Successfully signed up');
+      window.location.href = '/signin'; // Redirect to sign-in form after successful signup
     } catch (error) {
-      console.error(error); // Handle error
+      console.error(error);
     }
   };
 

@@ -24,6 +24,7 @@ const SignInForm: React.FC = () => {
       nav('/dashboard');
     } catch (error) {
       console.error(error);
+      alert('Invalid credentials. Please try again.');
     }
   };
 
