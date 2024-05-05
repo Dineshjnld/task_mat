@@ -14,7 +14,7 @@ const SignUpForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/signup', formData);
+      const response = await axios.post('https://task-m-5j5p.onrender.com/api/signup', formData);
       console.log(response.data);
       alert('Successfully signed up');
       window.location.href = '/signin'; // Redirect to sign-in form after successful signup

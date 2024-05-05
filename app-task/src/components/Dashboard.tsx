@@ -89,7 +89,7 @@ const Dashboard: React.FC = () => {
     const handleDeleteInterview = async (id: string) => {
       try {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:5000/api/interviews/${id}`, {
+        await axios.delete(`https://task-m-5j5p.onrender.com/api/interviews/${id}`, {
           headers: {
             Authorization: token ? `${token}` : '',
           },
