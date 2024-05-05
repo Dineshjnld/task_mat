@@ -23,7 +23,7 @@ const Dashboard: React.FC = () => {
     const fetchInterviews = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:5000/api/interviews', {
+        const res = await axios.get('https://task-m-5j5p.onrender.com/api/interviews', {
           headers: {
             Authorization: token ? `${token}` : '',
           },
@@ -66,13 +66,13 @@ const Dashboard: React.FC = () => {
         if (!newInterview) return;
         const token = localStorage.getItem('token');
         if (newInterview._id) {
-          await axios.put(`http://localhost:5000/api/interviews/${newInterview._id}`, newInterview, {
+          await axios.put(`https://task-m-5j5p.onrender.com/api/interviews/${newInterview._id}`, newInterview, {
             headers: {
               Authorization: token ? `${token}` : '',
             },
           });
         } else {
-          await axios.post('http://localhost:5000/api/interviews', newInterview, {
+          await axios.post('https://task-m-5j5p.onrender.com/api/interviews', newInterview, {
             headers: {
               Authorization: token ? `${token}` : '',
             },
